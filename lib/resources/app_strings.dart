@@ -2,10 +2,12 @@ class AppStrings {
   static const String YOUR_EMAIL = "Your email";
   static const String YOUR_NAME  = "Your name";
   static const String PASSWORD  = "Password";
+  static const String FORGOT_PASSWORD  = "Forgot Password ?";
   static const String OR  = "OR";
   static const String CREATE_PASSWORD  = "Create password";
   static const String LOGIN = "Login";
   static const String SIGNUP = "Signup";
+  static const String PASSWORD_RECOVERY = "Password Recovery";
   static const String ALL_LOVE_BEINGS_AND_END_THERE =
       "All love begins and\nend there.";
   static const String NEW_BORN_ESSENTIALS = "New born\nessentials.";
@@ -20,5 +22,7 @@ class AppStrings {
   static const String LOGIN_TO_YOUR_ACCOUNT="Login to your account";
   static const String SIGNUP_WITH_GOOGLE="Signup with Google";
   static const String SIGNUP_WITH_APPLE="Signup with Apple";
+  static const String CONTINUE_WITH_GOOGLE="Continue with Google";
+  static const String CONTINUE_WITH_APPLE="Continue with Apple";
 
 }

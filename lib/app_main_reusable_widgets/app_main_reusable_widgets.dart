@@ -97,39 +97,32 @@ class SignupAndLoginLayout extends StatelessWidget {
       width: MediaQuery.of(context).size.width,
       height: MediaQuery.of(context).size.height,
       color: AppColors.Blue,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+      child: Stack(
         children: [
-          Stack(
-            clipBehavior: Clip.none,
-            children: [
-              Positioned(
-                child: Container(
-                  child: Padding(
-                    padding: EdgeInsets.symmetric(
-                        horizontal: ScreenUtil().setWidth(12)),
-                    child: Image(
-                      image: AssetImage(AppImages.ITEMS),
-                    ),
-                  ),
+          Positioned(
+            child: Container(
+              child: Padding(
+                padding:
+                    EdgeInsets.symmetric(horizontal: ScreenUtil().setWidth(12)),
+                child: Image(
+                  image: AssetImage(AppImages.ITEMS),
                 ),
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Positioned(
-                    child: Container(
-                      height: 180,
-                      child: SvgPicture.asset(AppImages.APP_NAME),
-                    ),
-                  ),
-                ],
-              ),
-              Positioned(
-                top: 150,
-                child: widget,
-              ),
-            ],
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.only(
+                top: ScreenUtil().setHeight(74),
+                left: ScreenUtil().setWidth(121)),
+            child: SvgPicture.asset(AppImages.APP_NAME),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(top: 150.0),
+            child: Container(
+              width: MediaQuery.of(context).size.width,
+              height: MediaQuery.of(context).size.height,
+              child: widget,
+            ),
           ),
         ],
       ),

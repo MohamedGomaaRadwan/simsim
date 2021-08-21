@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:simsim/screens/home_screen.dart';
-import 'package:simsim/screens/login_screen.dart';
+import 'package:simsim/screens/login/login_screen.dart';
 import 'package:simsim/screens/on_boarding_screen/on_boarding_screen.dart';
 import 'package:simsim/screens/reset_password_screen.dart';
 import 'package:simsim/screens/signup/signup_screen.dart';

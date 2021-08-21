@@ -7,6 +7,7 @@ class AppImages {
   static const String APP_NAME = BASE + 'app_name.svg';
   static const String GOOGLE_LOGO = BASE + 'google_logo.svg';
   static const String APPLE_LOGO = BASE + 'apple_logo.svg';
+  static const String HIDE_PASSWORD = BASE + 'eye.svg';
 
 
 }

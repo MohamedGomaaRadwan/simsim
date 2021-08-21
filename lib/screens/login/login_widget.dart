@@ -10,7 +10,7 @@ import 'package:simsim/resources/text_styles.dart';
 import 'package:simsim/utils/constants.dart';
 import 'package:simsim/utils/routes.dart';
 
-Container buildSignupLayout(BuildContext context) {
+Container buildLoginLayout(BuildContext context) {
   return Container(
     width: MediaQuery.of(context).size.width,
     height: MediaQuery.of(context).size.height,
@@ -25,7 +25,7 @@ Container buildSignupLayout(BuildContext context) {
           children: [
             height32,
             Text(
-              AppStrings.SIGNUP_TO_YOUR_ACCOUNT,
+              AppStrings.LOGIN_TO_YOUR_ACCOUNT,
               style: AppTextStyles.headTitlesStyles,
             ),
             height48,
@@ -33,18 +33,9 @@ Container buildSignupLayout(BuildContext context) {
               label: AppStrings.YOUR_EMAIL,
             ),
             height20,
-            AppInputTextField(label: AppStrings.YOUR_NAME),
+            AppInputPasswordField(label: AppStrings.PASSWORD),
             height20,
-            AppInputPasswordField(label: AppStrings.CREATE_PASSWORD),
-            height20,
-            ClickableText(
-                text: AppStrings.BY_SIGNING_UP_YOU_CONFIRM,
-                clickableText: AppStrings.PRIVACY_POLICY,
-                onPress: () {},
-                textStyle: AppTextStyles.semiBold16,
-                clickableTextStyle: AppTextStyles.semiBoldColored16),
-            height20,
-            AppMainButton(buttonLabel: AppStrings.SIGNUP, onPress: () {}),
+            AppMainButton(buttonLabel: AppStrings.LOGIN, onPress: () {}),
             height12,
             Text(
               AppStrings.OR,
@@ -52,7 +43,7 @@ Container buildSignupLayout(BuildContext context) {
             ),
             height12,
             SignUpAndLoginButtonWithLogo(
-              label: AppStrings.SIGNUP_WITH_GOOGLE,
+              label: AppStrings.CONTINUE_WITH_GOOGLE,
               style: AppTextStyles.blackButtonsTextStyles,
               onPress: () {},
               image: AppImages.GOOGLE_LOGO,
@@ -61,7 +52,7 @@ Container buildSignupLayout(BuildContext context) {
             ),
             height20,
             SignUpAndLoginButtonWithLogo(
-              label: AppStrings.SIGNUP_WITH_APPLE,
+              label: AppStrings.CONTINUE_WITH_APPLE,
               style: AppTextStyles.whiteButtonsTextStyles,
               onPress: () {},
               image: AppImages.APPLE_LOGO,
@@ -72,13 +63,33 @@ Container buildSignupLayout(BuildContext context) {
             ClickableText(
                 text: '',
                 clickableText:
-                    AppStrings.ALREADY_HAVE_AN_ACCOUNT + ' ' + AppStrings.LOGIN,
+                AppStrings.FORGOT_PASSWORD,
                 onPress: () {
-                  Navigator.push(context,
-                      MRouter.generateRoute(RouteSettings(name: AppRoute.Login),),);
+                  Navigator.push(
+                    context,
+                    MRouter.generateRoute(
+                      RouteSettings(name: AppRoute.SignUp),
+                    ),
+                  );
                 },
                 textStyle: AppTextStyles.semiBoldColored16,
-                clickableTextStyle: AppTextStyles.semiBoldColored16)
+                clickableTextStyle: AppTextStyles.semiBoldColored16),
+            height32,
+            ClickableText(
+                text: '',
+                clickableText:
+                AppStrings.DONT_HAVE_AN_ACCOUNT + ' ' + AppStrings.SIGNUP,
+                onPress: () {
+                  Navigator.push(
+                    context,
+                    MRouter.generateRoute(
+                      RouteSettings(name: AppRoute.SignUp),
+                    ),
+                  );
+                },
+                textStyle: AppTextStyles.semiBoldColored16,
+                clickableTextStyle: AppTextStyles.semiBoldColored16),
+
           ],
         ),
       ),

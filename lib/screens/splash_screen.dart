@@ -18,7 +18,7 @@ class _SplashScreenState extends State<SplashScreen> {
     super.initState();
     Timer(Duration(seconds: 4), () {
       Navigator.of(context).pushReplacement(
-          MRouter.generateRoute(RouteSettings(name: AppRoute.OnBoarding))
+          MRouter.generateRoute(RouteSettings(name: AppRoute.Login))
       );
     });
   }
