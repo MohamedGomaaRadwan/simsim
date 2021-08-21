@@ -1,8 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:simsim/app_main_reusable_widgets/app_main_reusable_widgets.dart';
+import 'package:simsim/app_main_reusable_widgets/app_main_button.dart';
+import 'package:simsim/app_main_reusable_widgets/clickable_text.dart';
+import 'package:simsim/app_main_reusable_widgets/input_text_field.dart';
 import 'package:simsim/app_main_reusable_widgets/input_text_field_for_password.dart';
+import 'package:simsim/app_main_reusable_widgets/signup_and_login_with_logo.dart';
 import 'package:simsim/resources/app_colors.dart';
 import 'package:simsim/resources/app_strings.dart';
 import 'package:simsim/resources/image_paths.dart';
