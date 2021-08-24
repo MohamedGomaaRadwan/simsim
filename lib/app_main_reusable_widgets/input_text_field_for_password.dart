@@ -4,7 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:simsim/resources/app_colors.dart';
 
 class AppInputPasswordField extends StatefulWidget {
-  late String label;
+  late final String label;
 
   AppInputPasswordField({
     Key? key,

@@ -7,11 +7,11 @@ import 'package:simsim/app_main_reusable_widgets/input_text_field.dart';
 import 'package:simsim/app_main_reusable_widgets/input_text_field_for_password.dart';
 import 'package:simsim/app_main_reusable_widgets/signup_and_login_with_logo.dart';
 import 'package:simsim/resources/app_colors.dart';
-import 'package:simsim/resources/app_strings.dart';
 import 'package:simsim/resources/image_paths.dart';
 import 'package:simsim/resources/text_styles.dart';
 import 'package:simsim/utils/constants.dart';
 import 'package:simsim/utils/routes.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 Container buildSignupLayout(BuildContext context) {
   return Container(
@@ -28,34 +28,34 @@ Container buildSignupLayout(BuildContext context) {
           children: [
             height32,
             Text(
-              AppStrings.SIGNUP_TO_YOUR_ACCOUNT,
+              AppLocalizations.of(context)!.signUpToYourAccount,
               style: AppTextStyles.headTitlesStyles,
             ),
             height48,
             AppInputTextField(
-              label: AppStrings.YOUR_EMAIL,
+              label: AppLocalizations.of(context)!.yourEmail,
             ),
             height20,
-            AppInputTextField(label: AppStrings.YOUR_NAME),
+            AppInputTextField(label: AppLocalizations.of(context)!.yourEmail),
             height20,
-            AppInputPasswordField(label: AppStrings.CREATE_PASSWORD),
+            AppInputPasswordField(label: AppLocalizations.of(context)!.createPassword),
             height20,
             ClickableText(
-                text: AppStrings.BY_SIGNING_UP_YOU_CONFIRM,
-                clickableText: AppStrings.PRIVACY_POLICY,
+                text: AppLocalizations.of(context)!.bySigningUpYouConfirm,
+                clickableText: AppLocalizations.of(context)!.privacyPolicy,
                 onPress: () {},
                 textStyle: AppTextStyles.semiBold16,
                 clickableTextStyle: AppTextStyles.semiBoldColored16),
             height20,
-            AppMainButton(buttonLabel: AppStrings.SIGNUP, onPress: () {}),
+            AppMainButton(buttonLabel: AppLocalizations.of(context)!.signUp, onPress: () {}),
             height12,
             Text(
-              AppStrings.OR,
+              AppLocalizations.of(context)!.or,
               style: AppTextStyles.semiBold16,
             ),
             height12,
             SignUpAndLoginButtonWithLogo(
-              label: AppStrings.SIGNUP_WITH_GOOGLE,
+              label: AppLocalizations.of(context)!.signUpWithGoogle,
               style: AppTextStyles.blackButtonsTextStyles,
               onPress: () {},
               image: AppImages.GOOGLE_LOGO,
@@ -64,7 +64,7 @@ Container buildSignupLayout(BuildContext context) {
             ),
             height20,
             SignUpAndLoginButtonWithLogo(
-              label: AppStrings.SIGNUP_WITH_APPLE,
+              label: AppLocalizations.of(context)!.signUpWithApple,
               style: AppTextStyles.whiteButtonsTextStyles,
               onPress: () {},
               image: AppImages.APPLE_LOGO,
@@ -75,7 +75,7 @@ Container buildSignupLayout(BuildContext context) {
             ClickableText(
                 text: '',
                 clickableText:
-                    AppStrings.ALREADY_HAVE_AN_ACCOUNT + ' ' + AppStrings.LOGIN,
+                AppLocalizations.of(context)!.alreadyHaveAnAccount + ' ' + AppLocalizations.of(context)!.login,
                 onPress: () {
                   Navigator.push(context,
                       MRouter.generateRoute(RouteSettings(name: AppRoute.Login),),);

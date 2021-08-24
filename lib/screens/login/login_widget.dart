@@ -7,13 +7,14 @@ import 'package:simsim/app_main_reusable_widgets/input_text_field.dart';
 import 'package:simsim/app_main_reusable_widgets/input_text_field_for_password.dart';
 import 'package:simsim/app_main_reusable_widgets/signup_and_login_with_logo.dart';
 import 'package:simsim/resources/app_colors.dart';
-import 'package:simsim/resources/app_strings.dart';
 import 'package:simsim/resources/image_paths.dart';
 import 'package:simsim/resources/text_styles.dart';
 import 'package:simsim/utils/constants.dart';
 import 'package:simsim/utils/routes.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 Container buildLoginLayout(BuildContext context) {
+
   return Container(
     width: MediaQuery.of(context).size.width,
     height: MediaQuery.of(context).size.height,
@@ -28,25 +29,25 @@ Container buildLoginLayout(BuildContext context) {
           children: [
             height32,
             Text(
-              AppStrings.LOGIN_TO_YOUR_ACCOUNT,
+              AppLocalizations.of(context)!.allLoveBeingsAndEndThere,
               style: AppTextStyles.headTitlesStyles,
             ),
             height48,
             AppInputTextField(
-              label: AppStrings.YOUR_EMAIL,
+              label: AppLocalizations.of(context)!.yourEmail,
             ),
             height20,
-            AppInputPasswordField(label: AppStrings.PASSWORD),
+            AppInputPasswordField(label: AppLocalizations.of(context)!.password),
             height20,
-            AppMainButton(buttonLabel: AppStrings.LOGIN, onPress: () {}),
+            AppMainButton(buttonLabel: AppLocalizations.of(context)!.login, onPress: () {}),
             height12,
             Text(
-              AppStrings.OR,
+              AppLocalizations.of(context)!.or,
               style: AppTextStyles.semiBold16,
             ),
             height12,
             SignUpAndLoginButtonWithLogo(
-              label: AppStrings.CONTINUE_WITH_GOOGLE,
+              label: AppLocalizations.of(context)!.continueWithGoogle,
               style: AppTextStyles.blackButtonsTextStyles,
               onPress: () {},
               image: AppImages.GOOGLE_LOGO,
@@ -55,7 +56,7 @@ Container buildLoginLayout(BuildContext context) {
             ),
             height20,
             SignUpAndLoginButtonWithLogo(
-              label: AppStrings.CONTINUE_WITH_APPLE,
+              label: AppLocalizations.of(context)!.continueWithApple,
               style: AppTextStyles.whiteButtonsTextStyles,
               onPress: () {},
               image: AppImages.APPLE_LOGO,
@@ -66,7 +67,7 @@ Container buildLoginLayout(BuildContext context) {
             ClickableText(
                 text: '',
                 clickableText:
-                AppStrings.FORGOT_PASSWORD,
+                AppLocalizations.of(context)!.forgotPassword,
                 onPress: () {
                   Navigator.push(
                     context,
@@ -81,7 +82,7 @@ Container buildLoginLayout(BuildContext context) {
             ClickableText(
                 text: '',
                 clickableText:
-                AppStrings.DONT_HAVE_AN_ACCOUNT + ' ' + AppStrings.SIGNUP,
+                AppLocalizations.of(context)!.doNotHaveAnAccount + ' ' + AppLocalizations.of(context)!.signUp,
                 onPress: () {
                   Navigator.push(
                     context,

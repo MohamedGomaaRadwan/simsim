@@ -2,13 +2,13 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:simsim/app_main_reusable_widgets/app_main_button.dart';
-import 'package:simsim/app_main_reusable_widgets/clickable_text.dart';
 import 'package:simsim/resources/app_colors.dart';
-import 'package:simsim/resources/app_strings.dart';
+import 'package:simsim/resources/image_paths.dart';
 import 'package:simsim/resources/text_styles.dart';
 import 'package:simsim/screens/on_boarding_screen/on_boarding_content.dart';
 import 'package:simsim/utils/constants.dart';
 import 'package:simsim/utils/routes.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class OnBoardingScreen extends StatefulWidget {
   const OnBoardingScreen({Key? key}) : super(key: key);
@@ -29,6 +29,17 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
 
   @override
   Widget build(BuildContext context) {
+    List<OnBoardingContent> content = [
+      OnBoardingContent(
+          image: AppImages.SLIDER1,
+          title: AppLocalizations.of(context)!.allLoveBeingsAndEndsThere,
+          description: AppLocalizations.of(context)!.loremIpsum),
+      OnBoardingContent(
+          image: AppImages.SLIDER2,
+          title: AppLocalizations.of(context)!.newBornEssentials,
+          description: AppLocalizations.of(context)!.loremIpsum),
+    ];
+
     return SafeArea(
       child: Scaffold(
         body: Column(
@@ -41,13 +52,13 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                       currentPage = value;
                     });
                   },
-                  itemCount: OnBoardingContent.content.length,
+                  itemCount:content.length,
                   itemBuilder: (context, index) {
                     return Container(
                       decoration: BoxDecoration(
                         image: DecorationImage(
                           image: AssetImage(
-                              OnBoardingContent.content[index].image),
+                              content[index].image),
                           fit: BoxFit.cover,
                         ),
                       ),
@@ -55,7 +66,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                         padding: EdgeInsets.symmetric(
                           horizontal: ScreenUtil().setWidth(36),
                         ),
-                        child: buildPageContent(index, context),
+                        child: buildPageContent(index, context,content),
                       ),
                     );
                   }),
@@ -66,22 +77,22 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
     );
   }
 
-  Column buildPageContent(int index, BuildContext context) {
+  Column buildPageContent(int index, BuildContext context,List<OnBoardingContent> content) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         height97,
         Container(
-          child: buildDots(),
+          child: buildDots(content),
         ),
         height48,
         Text(
-          OnBoardingContent.content[index].title,
+          content[index].title,
           style: AppTextStyles.semiBold34,
         ),
         height48,
         Text(
-          OnBoardingContent.content[index].description,
+          content[index].description,
         ),
         buildButton(context),
       ],
@@ -98,7 +109,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               AppMainButton(
-                buttonLabel: AppStrings.GET_STARTED,
+                buttonLabel:AppLocalizations.of(context)!.getStarted,
                 onPress: () {
                   if (_pageController.hasClients) {
                     if (currentPage == 1) {
@@ -119,10 +130,10 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
     );
   }
 
-  Row buildDots() {
+  Row buildDots(List<OnBoardingContent> content) {
     return Row(
       children: List.generate(
-        OnBoardingContent.content.length,
+        content.length,
         (index) => Container(
           margin: EdgeInsets.only(right: 5),
           height: ScreenUtil().setHeight(15),
