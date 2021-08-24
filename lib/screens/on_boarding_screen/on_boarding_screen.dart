@@ -6,7 +6,7 @@ import 'package:simsim/resources/app_colors.dart';
 import 'package:simsim/resources/image_paths.dart';
 import 'package:simsim/resources/text_styles.dart';
 import 'package:simsim/screens/on_boarding_screen/on_boarding_content.dart';
-import 'package:simsim/utils/constants.dart';
+import 'package:simsim/utils/app_size_box.dart';
 import 'package:simsim/utils/routes.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
@@ -81,16 +81,16 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        height97,
+        97.heightBox,
         Container(
           child: buildDots(content),
         ),
-        height48,
+        48.heightBox,
         Text(
           content[index].title,
           style: AppTextStyles.semiBold34,
         ),
-        height48,
+        48.heightBox,
         Text(
           content[index].description,
         ),

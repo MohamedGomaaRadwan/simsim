@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:simsim/resources/app_colors.dart';
-import 'package:simsim/utils/constants.dart';
+import 'package:simsim/utils/app_size_box.dart';
 
 class SignUpAndLoginButtonWithLogo extends StatelessWidget {
   late VoidCallback onPress;
@@ -41,7 +41,7 @@ class SignUpAndLoginButtonWithLogo extends StatelessWidget {
                 image,
                 color: logoIsWhite == true ? AppColors.White : null,
               ),
-              width12,
+              12.widthBox,
               Text(
                 label,
                 style: style,

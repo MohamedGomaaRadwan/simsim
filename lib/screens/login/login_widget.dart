@@ -9,7 +9,7 @@ import 'package:simsim/app_main_reusable_widgets/signup_and_login_with_logo.dart
 import 'package:simsim/resources/app_colors.dart';
 import 'package:simsim/resources/image_paths.dart';
 import 'package:simsim/resources/text_styles.dart';
-import 'package:simsim/utils/constants.dart';
+import 'package:simsim/utils/app_size_box.dart';
 import 'package:simsim/utils/routes.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
@@ -27,25 +27,25 @@ Container buildLoginLayout(BuildContext context) {
       child: SingleChildScrollView(
         child: Column(
           children: [
-            height32,
+            32.heightBox,
             Text(
               AppLocalizations.of(context)!.allLoveBeingsAndEndThere,
               style: AppTextStyles.headTitlesStyles,
             ),
-            height48,
+            48.heightBox,
             AppInputTextField(
               label: AppLocalizations.of(context)!.yourEmail,
             ),
-            height20,
+            20.heightBox,
             AppInputPasswordField(label: AppLocalizations.of(context)!.password),
-            height20,
+20.heightBox,
             AppMainButton(buttonLabel: AppLocalizations.of(context)!.login, onPress: () {}),
-            height12,
+            12.heightBox,
             Text(
               AppLocalizations.of(context)!.or,
               style: AppTextStyles.semiBold16,
             ),
-            height12,
+            12.heightBox,
             SignUpAndLoginButtonWithLogo(
               label: AppLocalizations.of(context)!.continueWithGoogle,
               style: AppTextStyles.blackButtonsTextStyles,
@@ -54,7 +54,7 @@ Container buildLoginLayout(BuildContext context) {
               buttonColor: AppColors.White,
               logoIsWhite: false,
             ),
-            height20,
+            20.heightBox,
             SignUpAndLoginButtonWithLogo(
               label: AppLocalizations.of(context)!.continueWithApple,
               style: AppTextStyles.whiteButtonsTextStyles,
@@ -63,7 +63,7 @@ Container buildLoginLayout(BuildContext context) {
               buttonColor: AppColors.KAppleButton,
               logoIsWhite: true,
             ),
-            height32,
+            32.heightBox,
             ClickableText(
                 text: '',
                 clickableText:
@@ -78,7 +78,7 @@ Container buildLoginLayout(BuildContext context) {
                 },
                 textStyle: AppTextStyles.semiBoldColored16,
                 clickableTextStyle: AppTextStyles.semiBoldColored16),
-            height32,
+            32.heightBox,
             ClickableText(
                 text: '',
                 clickableText:
